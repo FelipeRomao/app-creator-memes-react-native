@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, Button} from 'react-native';
+import { StyleSheet, Text, View} from 'react-native';
 
 class Janta extends Component {
   constructor(props) {
@@ -19,7 +19,7 @@ class Janta extends Component {
     return(
       <View>
         <Text style={{textAlign : 'center', fontWeight : 'bold', fontSize : 25}}>Hoje você vai jantar:</Text>
-        <Text style={{textAlign : 'center', fontWeight : 'bold', fontSize : 25, color : 'blue'}}>{this.state.comida}</Text>
+        <Text style={{ textAlign : 'center', fontWeight : 'bold', fontSize : 25, color : 'blue'}}>{this.state.comida}</Text>
       </View>
     );
   }
@@ -31,6 +31,8 @@ export default class PrimeiroApp extends Component {
     return(
       <View style={styles.container}>
         <Janta />
+        <Text style={styles.textFirst}>Estilo aplicado separado da tag</Text>
+        <Text style={[styles.textSecond, styles.textFirst]}>Mais de um estilo aplicado separado da tag</Text>
       </View>
     );
   }
@@ -42,5 +44,16 @@ const styles = StyleSheet.create({
     backgroundColor : '#fff',
     alignItems : 'center',
     justifyContent : 'center',
+  },
+
+  textFirst : {
+    fontSize : 15,
+    color : '#00FF00'
+  },
+
+  textSecond : {
+    fontSize : 10,
+    backgroundColor : 'orange',
+    textAlign : 'center',
   },
 });
