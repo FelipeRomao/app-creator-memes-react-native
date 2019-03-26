@@ -29,22 +29,22 @@ class Janta extends Component {
 export default class PrimeiroApp extends Component {
   render() {    
     return(
-      <View style={styles.container}>
-        <Janta />
-        <Text style={styles.textFirst}>Estilo aplicado separado da tag</Text>
-        <Text style={[styles.textSecond, styles.textFirst]}>Mais de um estilo aplicado separado da tag</Text>
+      <View style={{flex : 1, backgroundColor : 'black'}}>
+        <View style={{height : 80, backgroundColor : 'green'}}></View>
+        <View style={{flex : 1, backgroundColor : 'yellow'}}></View>
+        <View style={{height : 40, backgroundColor : 'red'}}></View>
       </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
-  container : {
+  /*container : {
     flex : 1,
     backgroundColor : '#fff',
     alignItems : 'center',
     justifyContent : 'center',
-  },
+  },*/
 
   textFirst : {
     fontSize : 15,
